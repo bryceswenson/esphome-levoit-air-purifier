@@ -157,9 +157,9 @@ void Levoit::handle_char_(uint8_t c) {
 void Levoit::handle_payload_(LevoitPayloadType type, uint8_t sequenceNumber, uint8_t *payload, size_t len) {
   ESP_LOGV(TAG, "Received command (%06x): %s", (uint32_t) type, format_hex_pretty(payload, len).c_str());
   // Run through listeners
-      ESP_LOGCONFIG(TAG, " _____________________________");
   for (auto &listener : this->listeners_) {
     if (listener.type == static_cast<LevoitPayloadType>(get_model_specific_payload_type(type)))
+      ESP_LOGCONFIG(TAG, " _____________________________2");
       listener.func(payload, len);
   }
 }
