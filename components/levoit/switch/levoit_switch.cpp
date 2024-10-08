@@ -38,19 +38,19 @@ void LevoitSwitch::write_state(bool state) {
     this->parent_->send_command(LevoitCommand{.payloadType = LevoitPayloadType::SET_DISPLAY_LOCK,
                                               .packetType = LevoitPacketType::SEND_MESSAGE,
                                               .payload = {0x00, state}});
-    this->publish_state(state);
+    //this->publish_state(state);
   }
   if (this->purpose_ == MASTER_POWER) {
     this->parent_->send_command(LevoitCommand{.payloadType = LevoitPayloadType::SET_POWER_STATE,
                                               .packetType = LevoitPacketType::SEND_MESSAGE,
                                               .payload = {0x00, state}});
-    this->publish_state(state);
+    //this->publish_state(state);
   }
   if (this->purpose_ == DISPLAY_ON) {
     this->parent_->send_command(LevoitCommand{.payloadType = LevoitPayloadType::SET_SCREEN_BRIGHTNESS,
                                               .packetType = LevoitPacketType::SEND_MESSAGE,
                                               .payload = {0x00, state == true ? (uint8_t) 0x64 : (uint8_t) 0x00}});
-    this->publish_state(state);
+    //this->publish_state(state);
   }
 }
 
