@@ -64,7 +64,7 @@ void Levoit::loop() {
   process_command_queue_();
 }
 
-void Levoit::dump_config() { ESP_LOGCONFIG(TAG, "Levoit!"); }
+void Levoit::dump_config() { ESP_LOGCONFIG(TAG, "Levoit!1231231231231231231231"); }
 
 bool Levoit::validate_message_() {
   uint32_t at = this->rx_message_.size() - 1;
