@@ -13,6 +13,7 @@ static const int RECEIVE_TIMEOUT = 100;
 static const int MAX_RETRIES = 5;
 
 void Levoit::setup() {
+  printf ("%s \n", "+++++++++++++++++++++++++++++++++++++A string");
   ESP_LOGI(TAG, "Setting up Levoit %s", device_model_ == LevoitDeviceModel::CORE_300S ? "Core 300S" : "Core 400S");
 
   this->set_interval("heartbeat", 15000, [this] {
