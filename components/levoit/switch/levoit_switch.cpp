@@ -33,6 +33,7 @@ void LevoitSwitch::setup() {
 
 void LevoitSwitch::write_state(bool state) {
   printf ("%s \n", "+++++++++++++++++++++++++++++++++++++A string");
+  ESP_LOGCONFIG(TAG, "  Switch puasdasdrposecode: %u", (uint8_t) this->purpose_);
   ESP_LOGV(TAG, "Setting switch purposecode %u: %s", (uint8_t) this->purpose_, ONOFF(state));
   if (this->purpose_ == DISPLAY_LOCK) {
     this->parent_->send_command(LevoitCommand{.payloadType = LevoitPayloadType::SET_DISPLAY_LOCK,
